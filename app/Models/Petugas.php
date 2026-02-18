@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Petugas extends Model
 {
-    protected $fillable = ['nama'];
+    protected $fillable = ['nama', 'username', 'password'];
 
     public function pengembalian()
     {
