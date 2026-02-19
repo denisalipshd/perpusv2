@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('judul');
             $table->string('pengarang');
             $table->year('tahun_terbit');
-            $table->timestamps();
+            $table->integer('jumlah_buku')->default(0);
+            $table->string('cover')->nullable();
+            $table->timestamps();   
         });
     }
 

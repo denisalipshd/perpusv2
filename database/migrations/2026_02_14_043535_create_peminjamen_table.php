@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('peminjamen', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('anggota_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('buku_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->date('tgl_pinjam');
             $table->date('tgl_kembali');

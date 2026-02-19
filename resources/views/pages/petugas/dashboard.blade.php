@@ -5,6 +5,12 @@
 @section('content')
 
 <div class="content">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <div class="cards-dashboard">
           <div class="card-dashboard">
             <h4>Total Users</h4>

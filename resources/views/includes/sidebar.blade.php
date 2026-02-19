@@ -7,6 +7,11 @@
         <li><a href="#">Pengembalian</a></li>
         <li><a href="#">Anggota</a></li>
         <li><a href="#">Petugas</a></li>
-        <li><a href="#">Logout</a></li>
+        <form action="{{ route('petugas.logout') }}" method="POST">
+          @csrf
+          <li>
+            <button type="submit" class="border-0 bg-transparent text-white" onclick="return confirm('Yakin Logout?')">Logout</button>
+          </li>
+        </form>
       </ul>
 </div>

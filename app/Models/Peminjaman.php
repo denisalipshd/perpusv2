@@ -8,9 +8,9 @@ class Peminjaman extends Model
 {
     protected $fillable = ['anggota_id', 'buku_id', 'tgl_pinjam', 'tgl_kembali'];
 
-    public function anggota()
+    public function user()
     {
-        return $this->belongsTo(Anggota::class);
+        return $this->belongsTo(User::class);
     }
 
     public function buku()
