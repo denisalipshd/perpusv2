@@ -18,6 +18,7 @@ return new class extends Migration
             $table->year('tahun_terbit');
             $table->integer('jumlah_buku')->default(0);
             $table->string('cover')->nullable();
+            $table->softDeletes();
             $table->timestamps();   
         });
     }

@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Peminjaman extends Model
 {
-    protected $fillable = ['anggota_id', 'buku_id', 'tgl_pinjam', 'tgl_kembali'];
+    use SoftDeletes;
+    
+    protected $fillable = ['user_id', 'buku_id', 'tgl_pinjam', 'tgl_kembali'];
 
     public function user()
     {

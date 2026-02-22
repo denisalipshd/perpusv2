@@ -20,10 +20,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                <a class="nav-link {{ request()->routeIs('beranda') ? 'active' : '' }}" aria-current="page" href="{{ route('beranda') }}">Beranda</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Daftar Buku</a>
+                <a class="nav-link {{ request()->routeIs('anggota.daftar-buku') ? 'active' : '' }}" href="{{ route('anggota.daftar-buku') }}">Daftar Buku</a>
+            </li>
+            <li>
+                <a class="nav-link {{ request()->routeIs('anggota.peminjaman') ? 'active' : '' }}" href="{{ route('anggota.peminjaman') }}">Peminjaman</a>
             </li>
 
             @if ($anggota)

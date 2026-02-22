@@ -22,7 +22,7 @@
                 <th scope="col">No</th>
                 <th scope="col">Cover</th>
                 <th scope="col">Judul</th>
-                <th scope="col">Penulis</th>
+                <th scope="col">Pengarang</th>
                 <th scope="col">Tahun Terbit</th>
                 <th scope="col">Jumlah Buku</th>
                 <th scope="col">Aksi</th>
@@ -32,13 +32,13 @@
             @foreach($bukus as $buku)
             <tr>
                 <th scope="row">{{ $loop->iteration }}</th>
-                <td><img src="{{ asset('storage/' . $buku->cover) }}" alt="Cover" width="50"></td>
+                <td><img src="{{ asset('storage/' . $buku->cover) }}" alt="Cover Buku" width="50"></td>
                 <td>{{ $buku->judul }}</td>
                 <td>{{ $buku->pengarang }}</td>
                 <td>{{ $buku->tahun_terbit }}</td>
                 <td>{{ $buku->jumlah_buku }}</td>
                 <td>
-                    <a href="{{ route('buku.edit', $buku->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                    <a href="{{ route('buku.edit', $buku->id) }}" class="btn btn-sm btn-warning">Edit</a>
                     <form action="{{ route('buku.destroy', $buku->id) }}" method="POST" class="d-inline">
                         @csrf
                         @method('DELETE')

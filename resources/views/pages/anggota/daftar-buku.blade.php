@@ -1,6 +1,6 @@
 @extends('layouts.anggota')
 
-@section('title', 'Book Library | Beranda')
+@section('title', 'Book Library | Daftar Buku')
 
 @section('content')
     @if (session('success'))
@@ -24,7 +24,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h2 class="mb-4">Buku Terbaru</h2>
+            <h2 class="mb-4">Daftar Buku</h2>
         </div>
     </div>
         <div class="row">

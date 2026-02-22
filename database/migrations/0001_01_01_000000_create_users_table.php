@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('no_telp');
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
 

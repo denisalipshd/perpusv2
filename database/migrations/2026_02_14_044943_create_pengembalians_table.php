@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('petugas_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->date('tgl_pengembalian');
             $table->integer('denda')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

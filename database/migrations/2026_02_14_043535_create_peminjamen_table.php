@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('buku_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->date('tgl_pinjam');
             $table->date('tgl_kembali');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

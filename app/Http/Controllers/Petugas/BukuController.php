@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Petugas;
 
+use App\Http\Controllers\Controller;
 use App\Models\Buku;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-
-use function PHPUnit\Framework\fileExists;
 
 class BukuController extends Controller
 {
@@ -89,6 +88,11 @@ class BukuController extends Controller
     public function destroy($id)
     {
         $buku = Buku::findOrFail($id);
+
+        if($buku->cover && Storage::disk('public')->exists($buku->cover)) {
+            Storage::disk('public')->delete($buku->cover);
+        }
+
         $buku->delete();
 
         return redirect()->route('buku.index')->with('success', 'Buku berhasil dihapus.');
