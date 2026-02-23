@@ -6,7 +6,6 @@
 <div class="content">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h4>Daftar Peminjaman</h4>
-        {{-- <a href="{{ route('buku.create') }}" class="btn btn-primary">Tambah Buku</a> --}}
     </div>
 
     @if(session('success'))
@@ -20,11 +19,11 @@
         <thead>
             <tr>
                 <th scope="col">No</th>
-                <th scope="col">Nama Anggota</th>
+                <th scope="col">Cover Buku</th>
                 <th scope="col">Judul Buku</th>
+                <th scope="col">Nama Anggota</th>
                 <th scope="col">tgl Pinjam</th>
                 <th scope="col">Tgl Kembali</th>
-                <th scope="col">No. Telp</th>
                 <th scope="col">Aksi</th>
             </tr>
         </thead>
@@ -32,13 +31,13 @@
             @forelse($peminjamans as $peminjaman)
             <tr>
                 <th scope="row">{{ $loop->iteration }}</th>
-                <td>{{ $peminjaman->user->nama }}</td>
+                <td><img src="{{ asset('storage/' . $peminjaman->buku->cover) }}" alt="Cover Buku" width="50"></td>
                 <td>{{ $peminjaman->buku->judul }}</td>
+                <td>{{ $peminjaman->user->nama }}</td>
                 <td>{{ $peminjaman->tgl_pinjam }}</td>
                 <td>{{ $peminjaman->tgl_kembali }}</td>
-                <td>{{ $peminjaman->user->no_telp }}</td>
                 <td>
-                    <a href="" class="btn btn-sm btn-success">Pengembalian</a>
+                    <a href="{{ route('peminjaman.show', $peminjaman->id) }}" class="btn btn-sm btn-success">Lihat</a>
                 </td>
             </tr>
             @empty

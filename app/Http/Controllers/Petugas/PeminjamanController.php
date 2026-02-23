@@ -13,4 +13,10 @@ class PeminjamanController extends Controller
         $peminjamans = Peminjaman::with(['user', 'buku'])->latest()->get();
         return view('pages.petugas.peminjaman.index', compact('peminjamans'));
     }
+
+    public function show($id)
+    {
+        $peminjaman = Peminjaman::with(['user', 'buku'])->findOrFail($id);
+        return view('pages.petugas.peminjaman.show', compact('peminjaman'));
+    }
 }

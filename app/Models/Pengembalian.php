@@ -16,7 +16,7 @@ class Pengembalian extends Model
 
     public function peminjaman()
     {
-        return $this->belongsTo(Peminjaman::class);
+        return $this->belongsTo(Peminjaman::class)->withTrashed();
     }
 
     public function petugas()

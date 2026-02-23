@@ -30,7 +30,7 @@ body {
     width: 250px;
     background: #4e73df;
     color: white;
-    height: 100vh;
+    min-height: 100vh;
     padding: 20px;
     transition: 0.3s;
 }
